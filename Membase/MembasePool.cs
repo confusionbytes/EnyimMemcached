@@ -211,7 +211,8 @@ namespace Membase
 			{
 				CurrentNodes = epa.Select(ip => (IMemcachedNode)new BinaryNode(ip, this.configuration.SocketPool, auth)).ToArray(),
 				Locator = vbnl,
-				OpFactory = new VBucketAwareOperationFactory(vbnl)
+				OpFactory = new VBucketAwareOperationFactory(vbnl),
+				IsVbucket = true
 			};
 		}
 
